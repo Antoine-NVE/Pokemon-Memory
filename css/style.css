@@ -14,16 +14,18 @@
 
 body {
   background: rgb(81, 197, 90);
+  height: fit-content;
 }
 
 h1 {
   color: white;
   text-transform: capitalize;
-  margin: 0;
+  margin: 2rem 0 0;
 }
 
 p {
   color: yellow;
+  margin-bottom: 2rem;
 }
 
 span {
@@ -41,10 +43,15 @@ span {
   box-shadow: -8px -2px 0px 15px rgba(95, 102, 95, 0.25);
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  justify-items: center;
   grid-template-rows: repeat(4, 1fr);
-  align-items: center;
   padding: 8px;
+}
+
+#container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
 }
 
 img {
@@ -56,6 +63,12 @@ img {
   aspect-ratio: 3 / 4;
   transition: 0.3s;
   background: rgb(74, 70, 69);
+}
+
+#restart {
+  text-shadow: none;
+  margin-top: 2rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 392px) {

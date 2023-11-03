@@ -2,6 +2,9 @@
 // Variables
 // ------------
 
+// Bouton
+const restart = document.getElementById("restart");
+
 // Affichage
 const container = document.getElementById("container");
 const compteur = document.getElementById("compteur");
@@ -78,7 +81,7 @@ arrayRandomizer(tableauObjets);
 
 // Mets les cartes en place, face cachée
 for (i = 0; i < 16; i++) {
-  container.innerHTML += `<img id="image${i}" class="imagesListe" name="${tableauObjets[i].nom}" src="img/Dessus.png">`;
+  container.innerHTML += `<div><img id="image${i}" class="imagesListe" name="${tableauObjets[i].nom}" src="img/dessus.png"></div>`;
 }
 
 // Récupère l'id de la carte cliquée
@@ -86,7 +89,7 @@ for (i = 0; i < 16; i++) {
   const image = document.getElementById(imagesListe[i].id);
   image.addEventListener("click", () => {
     // Vérifie que la carte cliquée n'est pas déjà visible
-    if (image.src.includes("img/Dessus.png")) {
+    if (image.src.includes("img/dessus.png")) {
       // Vérifie qu'aucune carte ne soit visible
       if (carteVisible1 == "") {
         carteVisible1 = image;
@@ -130,13 +133,13 @@ for (i = 0; i < 16; i++) {
 
       // Retourne les 2 cartes visibles
       else {
-        rotateY(carteVisible1, "img/Dessus.png");
+        rotateY(carteVisible1, "img/dessus.png");
         carteVisible1 = image;
         rotateY(
           carteVisible1,
           `${tableauObjets[carteVisible1.id.substring(5)].img}`
         );
-        rotateY(carteVisible2, "img/Dessus.png");
+        rotateY(carteVisible2, "img/dessus.png");
         carteVisible2 = "";
         compteurValeur++;
       }
@@ -146,3 +149,7 @@ for (i = 0; i < 16; i++) {
     }
   });
 }
+
+restart.addEventListener("click", () => {
+  location.reload();
+});

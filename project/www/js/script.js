@@ -2,6 +2,7 @@
 // Variables
 // ------------
 
+// Bouton
 const restart = document.getElementById("restart");
 
 // Affichage
